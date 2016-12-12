@@ -41,8 +41,8 @@ io.sockets.on('connection', function(socket){
 		
 		socket.username = username;
 		usernames[username] = username;
-		socket.emit('updatechat', 'SERVER', '채팅방에 입장하셨습니다');
-		socket.broadcast.emit('updatechat', 'SERVER', username + '님이 접속하셨습니다');
+		//socket.emit('updatechat', 'SERVER', '채팅방에 입장하셨습니다');
+		socket.broadcast.emit('updatechat', '알림', username + '님이 접속하셨습니다');
 		io.sockets.emit('updateusers', usernames);
 		
 	});
@@ -52,7 +52,7 @@ io.sockets.on('connection', function(socket){
 	
 		delete usernames[socket.username];
 		io.sockets.emit('updateusers', usernames);
-		socket.broadcast.emit('updatechat', 'SERVER', socket.username + '님이 나갔습니다');
+		socket.broadcast.emit('updatechat', '알림', socket.username + '님이 나갔습니다');
 		
 	});
 	

@@ -1,16 +1,105 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited{
+	color : #fff;	
+}
+
 #wrapper{
-	
-	width:500px;
+	position: relative;
+	top:0px;
+	left:0px;
+	width:300px;
 	height:600px;
-	background-color: #2B2F38;
+	background: url('../img/background.jpg');
 	color:#fff;
-	
+	border:1px solid black;	
 }
 
-#header{
+#chatUsers{
+	position: absolute;
+	top:50px;
+	left:-150px;
+	width:150px;
+	height:500px;
+	background-color: #000;
+	z-index:10;	
+}
+
+#chatUsers > p {
+	text-align: center;
+}
+
+#users{
 	color:#fff;
 }
 
-#title{
-	background-color: #727679;
+#users > p {
+	background-image : url('../img/circle.png');
+	background-repeat : no-repeat;
+	background-position : 0px 5px;
+	position: relative;
+	top:10px;
+	left:10px;
+	padding-left:22px;
 }
+
+header{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	color:#fff;
+}
+
+#iconDiv{
+	position: relative;
+	top:10px;
+	left:10px;
+	z-index:9;
+}
+
+#icon{
+	font-size:30px;
+}
+
+section{
+	position: relative;
+	top:15px;
+	left:20px;
+	width:280px;
+	overflow:hidden;
+	z-index:9;
+}
+
+#scrollBlind{
+	width:300px;
+	height:450px;
+	overflow-y:scroll;
+}
+
+footer{
+	position:absolute;
+	bottom:10px;
+	left:30px;	
+}
+
+#data{
+	width:200px;
+	height:21px;
+}
+
+#datasend{
+	background: #000;
+	padding:3px;
+	color:#fff;
+}
+
+
+
