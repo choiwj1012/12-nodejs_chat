@@ -26,6 +26,7 @@ app.get('/', function(req, res){
 
 // 채팅 서버에 현재 접속한 사용자 명을 저장할 변수
 var usernames = {};
+var usernumber = 0;
 
 io.sockets.on('connection', function(socket){
 	
@@ -38,14 +39,34 @@ io.sockets.on('connection', function(socket){
 	
 	// client가 adduser 이벤트를 전송할 경우 처리할 리스너 함수
 	socket.on('adduser', function(username){
+			
+		username = username + usernumber;
+		usernumber = usernumber + 1;
 		
 		socket.username = username;
 		usernames[username] = username;
-		//socket.emit('updatechat', 'SERVER', '채팅방에 입장하셨습니다');
+			
 		socket.broadcast.emit('updatechat', '알림', username + '님이 접속하셨습니다');
+		
 		io.sockets.emit('updateusers', usernames);
 		
 	});
+
+	// client가 updateNick 이벤트를 전송할 경우 처리할 리스너 함수
+	socket.on('updateNick', function(nick){
+		
+		delete usernames[socket.username];
+		username = nick;
+		socket.username = username;
+		usernames[username] = username;
+		
+		io.sockets.emit('updatechat', username, "으로 닉네임이 변경되었습니다");
+		socket.broadcast.emit('updatechat', '알림', username + '닉네임이 변경되었습니다');
+		
+		io.sockets.emit('updateusers', usernames);
+		
+	})
+	
 	
 	// user가 접속을 끊을 경우 처리할 리스너 함수
 	socket.on('disconnect', function(){
