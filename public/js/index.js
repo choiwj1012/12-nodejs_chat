@@ -1,10 +1,11 @@
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('http://52.78.224.181:3000/');
 
 
 // 서버에 접속할 때, 사용자 명을 확인한다.
 socket.on('connect', function(){
 	
-	socket.emit('adduser', prompt('채팅 아이디를 입력해주세요'));
+	var name = 'anonymous'
+	socket.emit('adduser', name);
 	
 });
 
@@ -63,6 +64,10 @@ $(function(){
 		socket.emit('sendchat', message);
 		$('#data').focus();
 		
+		// 채팅창이 스크롤이 생길 경우 항상 최신이 보이도록 유지
+		// $('#conversation').scrollTop($('#conversation').height());
+		document.getElementById('conversation').scrollTop = document.getElementById('conversation').scrollHeight;
+		
 	});
 	
 	
@@ -75,6 +80,10 @@ $(function(){
 			$('#datasend').focus().click();
 			
 		}
+		
+		// 채팅창이 스크롤이 생길 경우 항상 최신이 보이도록 유지
+		// $('#conversation').scrollTop($('#conversation').height());
+		document.getElementById('conversation').scrollTop = document.getElementById('conversation').scrollHeight;
 		
 	});
 	
