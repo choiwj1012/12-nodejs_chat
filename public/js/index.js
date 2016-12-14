@@ -1,10 +1,9 @@
-var socket = io.connect('http://52.78.224.181:3000/');
-
+var socket = io.connect('http://localhost:3000');
 
 // 서버에 접속할 때, 사용자 명을 확인한다.
 socket.on('connect', function(){
 	
-	var name = 'anonymous'
+	name = 'annoymous';
 	socket.emit('adduser', name);
 	
 });
@@ -40,17 +39,9 @@ $(function(){
 		var openClose = $('#chatUsers').css('left');
 		
 		if(openClose == '-150px'){
-		
-			$('#chatUsers').animate({			
-				left : 0		
-			});
-			
+			$('#chatUsers').animate({ left : 0 });
 		} else {
-			
-			$('#chatUsers').animate({				
-				left : -150				
-			});
-			
+			$('#chatUsers').animate({ left : -150 });
 		}
 		
 	});
@@ -87,5 +78,14 @@ $(function(){
 		
 	});
 	
+	
+	// 닉네임 변경 버튼을 클릭하면
+	$('#changeNick').on('click', function(){
+
+		var nick = $('#nick').val();
+		socket.emit('updateNick', nick);
+		
+	});
+
 	
 });
