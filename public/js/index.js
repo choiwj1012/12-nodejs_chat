@@ -4,19 +4,8 @@ var socket = io.connect('http://52.78.224.181:3000/');
 // 서버에 접속할 때, 사용자 명을 확인한다.
 socket.on('connect', function(){
 	
-<<<<<<< HEAD
-	socket.emit('adduser', prompt('채팅 아이디를 입력해주세요'));		//socket.emit( function() , '사용자 아이디')
-	//socket.emit('adduser', function(){
-		//call back으로 데이터를 받는다.
-		
-		
-	//});
-	
-	//socket.emit('adduser', '아아 테스트중입니다.');
-=======
 	var name = 'anonymous'
 	socket.emit('adduser', name);
->>>>>>> e41f3ea7817e7562e97026758b574c7144d117d1
 	
 });
 
@@ -50,7 +39,7 @@ $(function(){
 		
 		var openClose = $('#chatUsers').css('left');
 		
-		if(openClose == '-150px'){
+		if(openClose == '-175px'){
 		
 			$('#chatUsers').animate({			
 				left : 0		
@@ -59,7 +48,7 @@ $(function(){
 		} else {
 			
 			$('#chatUsers').animate({				
-				left : -150				
+				left : -175				
 			});
 			
 		}

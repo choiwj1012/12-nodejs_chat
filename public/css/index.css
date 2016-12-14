@@ -16,25 +16,29 @@ a:visited{
 	position: relative;
 	top:0px;
 	left:0px;
-	width:300px;
+	width:360px;
 	height:600px;
 	background: #FFF;
 	border: 1px solid #50c8e6;
 	color:#333;
+	box-shadow: 3px 3px 15px 0px #ccc;
 }
 
 #chatUsers{
 	position: absolute;
-	top:50px;
-	left:-150px;
-	width:150px;
+	bottom: 56px;			/* 채팅 인풋 박스 위에 바로 붙도록 함 */
+	left:-175px;
+	width:175px;
 	height:500px;
-	background-color: #000;
+	background-color: #40b8d6;
+	box-shadow: 3px 0px 15px 0px #ccc;
 	z-index:10;	
 }
 
 #chatUsers > p {
+	
 	text-align: center;
+	color: #FFF;
 }
 
 #users{
@@ -49,6 +53,7 @@ a:visited{
 	top:10px;
 	left:10px;
 	padding-left:22px;
+	
 }
 
 header{
@@ -79,7 +84,7 @@ section{
 
 #conversation{
 	position: relative;
-	width:300px;
+	width:360px;
 	height:450px;
 	overflow-y:scroll;
 }
@@ -87,37 +92,68 @@ section{
 footer{
 	position:absolute;
 	bottom: 0;
-	left: 0;	
+	left: 0;
+	width:360px;
+	height:56px;
+	background: #000;
 }
 
 #data{
 	
-	padding: 0;
-	margin-left: 5px;
-	border: 0;
-	width: 250px;
-	height: 50px;
+	position: absolute;
+	bottom:0;
+	top: 6px;
+	padding-left: 10px;
+	margin-left: 3px; 	
+	width: 285px;
+	height: 42px;
 	background: #50c8e6;
 	
+	border: 1px solid #60d8f6;
+	border: none;
+	border-radius: 99px;
 	
+	font-size:12pt;
+	color: #FFF;
+	
+	outline-style: none;	/* 선택되었을 때 출력 되는 default 외곽선  */
+	
+}
+
+
+#data:focus {
+	
+	background: #60d8f6;
 	
 }
 
 #datasend{
-	background: #000;
-	padding:3px;
-	color:#fff;
+	
+	position: absolute;
+	width:50px;
+	height:50px;
+	top: 3px;
+	right: 5px;
+	margin-top: auto;
+	padding:0;
+	background-color : transparent;
+	background-image : url('../img/120px_plane_icon.png');
+	background-repeat : no-repeat;
+	background-size: 50px 50px;
+	border:none;
+	outline-style: none;	/* 선택되었을 때 출력 되는 default 외곽선  */
+	
 }
 
 #input_layout {
 	
-	height: 50px;
-	min-width: 300px;
-	background: #50c8e6;
+	position: relative;
+	background-color: #50c8e6;
+	height: 56px;
+	z-index:11;	
 	
 }
 
-
-input::-webkit-input-placeholder { color: #80e8f6; }
+input::-webkit-input-placeholder { color: #90f8ff; }
 
 
