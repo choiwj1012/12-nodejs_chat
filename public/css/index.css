@@ -18,9 +18,9 @@ a:visited{
 	left:0px;
 	width:300px;
 	height:600px;
-	background: url('../img/background.jpg');
-	color:#fff;
-	border:1px solid black;	
+	background: #FFF;
+	border: 1px solid #50c8e6;
+	color:#333;
 }
 
 #chatUsers{
@@ -86,13 +86,21 @@ section{
 
 footer{
 	position:absolute;
-	bottom:10px;
-	left:30px;	
+	bottom: 0;
+	left: 0;	
 }
 
 #data{
-	width:200px;
-	height:21px;
+	
+	padding: 0;
+	margin-left: 5px;
+	border: 0;
+	width: 250px;
+	height: 50px;
+	background: #50c8e6;
+	
+	
+	
 }
 
 #datasend{
@@ -101,5 +109,15 @@ footer{
 	color:#fff;
 }
 
+#input_layout {
+	
+	height: 50px;
+	min-width: 300px;
+	background: #50c8e6;
+	
+}
+
+
+input::-webkit-input-placeholder { color: #80e8f6; }
 
 

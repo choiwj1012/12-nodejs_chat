@@ -4,7 +4,14 @@ var socket = io.connect('http://localhost:3000');
 // 서버에 접속할 때, 사용자 명을 확인한다.
 socket.on('connect', function(){
 	
-	socket.emit('adduser', prompt('채팅 아이디를 입력해주세요'));
+	socket.emit('adduser', prompt('채팅 아이디를 입력해주세요'));		//socket.emit( function() , '사용자 아이디')
+	//socket.emit('adduser', function(){
+		//call back으로 데이터를 받는다.
+		
+		
+	//});
+	
+	//socket.emit('adduser', '아아 테스트중입니다.');
 	
 });
 
