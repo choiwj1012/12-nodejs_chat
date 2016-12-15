@@ -16,19 +16,27 @@
 		<div id="wrapper">
 		
 			<div id="chatUsers">
-				<p>접속한 사람들</p>
+				<div id="title_bar">
+					<p>접속한 사람들</p>
+				</div>
 				<div id="users">
-					
+
 				</div>
 				<input id="nick" type="text" placeholder="닉네임변경" />
-				<button id="changeNick">변경</button>
+				<button id="changeNick_btn">변경</button>
 			</div>
 		
 			<header>			
 				<div id="iconDiv">
+					
 					<a href="#">
-						<i class="fa fa-ellipsis-v" aria-hidden="true" id="icon"></i>
+						<img id="user_list_btn" src="img/120px_chat_list_color.png" />
 					</a>
+					
+					<span id="iconDiv_text">
+						글자자리	
+					</span>
+					
 				</div>
 			</header>
 		
@@ -39,10 +47,10 @@
 			</section>
 		
 			<footer>
-				<div>
+				<div id="input_layout">
 					<input id="data" placeholder="이곳에 메시지를 입력하세요"/>
-					<button id="datasend">send</button>		
-				</div>
+					<button id="datasend"></button>
+				</div>		
 			</footer>
 		
 		</div>

@@ -29,19 +29,41 @@ socket.on('updateusers', function(data){
 });
 
 
-// page onload
-$(function(){
-	
-	
-	// iconDiv 버튼을 눌렀을 때
-	$('#iconDiv>a').click(function(){
+	// page onload
+	$(function(){
+		
+		// iconDiv 버튼을 눌렀을 때
+		$('#iconDiv>a').click(function(){
+			
+			var openClose = $('#chatUsers').css('left');
+			
+			if(openClose == '-175px'){
+			
+				$('#chatUsers').animate({			
+					left : 0		
+				});
+				
+			} else {
+				
+				$('#chatUsers').animate({			
+					left : -175
+				});
+				
+			}
+			
+	});
+		
+		
+	$('#conversation, #input_layout').click(function(event){
+		
+		event.stopPropagation();
 		
 		var openClose = $('#chatUsers').css('left');
 		
-		if(openClose == '-150px'){
-			$('#chatUsers').animate({ left : 0 });
-		} else {
-			$('#chatUsers').animate({ left : -150 });
+		if(openClose == '0px'){
+			$('#chatUsers').animate({				
+				left : -175				
+			});
 		}
 		
 	});
