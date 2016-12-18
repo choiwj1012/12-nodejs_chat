@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('http://52.78.224.181:3000/');
 
 // 서버에 접속할 때, 사용자 명을 확인한다.
 socket.on('connect', function(){
@@ -29,19 +29,41 @@ socket.on('updateusers', function(data){
 });
 
 
-// page onload
-$(function(){
-	
-	
-	// iconDiv 버튼을 눌렀을 때
-	$('#iconDiv>a').click(function(){
+	// page onload
+	$(function(){
+		
+		// iconDiv 버튼을 눌렀을 때
+		$('#iconDiv>a').click(function(){
+			
+			var openClose = $('#chatUsers').css('left');
+			
+			if(openClose == '-175px'){
+			
+				$('#chatUsers').animate({			
+					left : 0		
+				});
+				
+			} else {
+				
+				$('#chatUsers').animate({			
+					left : -175
+				});
+				
+			}
+			
+	});
+		
+		
+	$('#conversation, #input_layout').click(function(event){
+		
+		event.stopPropagation();
 		
 		var openClose = $('#chatUsers').css('left');
 		
-		if(openClose == '-150px'){
-			$('#chatUsers').animate({ left : 0 });
-		} else {
-			$('#chatUsers').animate({ left : -150 });
+		if(openClose == '0px'){
+			$('#chatUsers').animate({				
+				left : -175				
+			});
 		}
 		
 	});
@@ -80,7 +102,7 @@ $(function(){
 	
 	
 	// 닉네임 변경 버튼을 클릭하면
-	$('#changeNick').on('click', function(){
+	$('#changeNick_btn').on('click', function(){
 
 		var nick = $('#nick').val();
 		socket.emit('updateNick', nick);
