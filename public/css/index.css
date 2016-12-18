@@ -136,16 +136,25 @@ header{
 	position: relative; 
 	top: 0px;
 	left: 0px;
+<<<<<<< HEAD
 	comlor:#fff;
+=======
+	color:#fff;
+>>>>>>> c017ec1c114a5a5ecab42084d7f21411bef1d005
 	border-bottom: 1px solid #caeef7;
 }
 
 #iconDiv{
 	position: relative; 
 	height: 46px;
+<<<<<<< HEAD
 	z-index:11;
 	color: #60d8f6;
 	background-color: #FFF;
+=======
+	z-index:9;
+	color: #60d8f6;
+>>>>>>> c017ec1c114a5a5ecab42084d7f21411bef1d005
 	text-align: center;
 	margin: 0 auto;
 }
@@ -156,8 +165,12 @@ header{
 
 
 #iconDiv_text{
+<<<<<<< HEAD
 	line-height : 46px;
 	font-size: 18px;	
+=======
+	line-height : 46px;	
+>>>>>>> c017ec1c114a5a5ecab42084d7f21411bef1d005
 }
 
 
